@@ -1,0 +1,166 @@
+*, *::after, *::before {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+html {
+    font-size: 16px;
+    text-align: center;
+}
+body {
+    background: black;
+}
+
+/* header */
+.body_header {
+    max-height: 110px;
+    background: rgb(209, 171, 68);
+    padding: 15px;
+}
+header h1 {
+    font-size: 1.6rem;
+}
+nav {
+    margin: 10px;
+}
+nav div {
+    display: inline-block;
+    border: 2px solid black;
+    margin: 0 auto;
+    padding: 5px 5px;
+}
+nav div:hover {
+    background: rgb(221, 178, 59);
+    cursor: pointer;
+}
+
+/* main */
+main {
+    color: beige;
+    height: 76vh;
+}
+
+article {
+    padding: 40px;
+}
+h1 {
+    margin-bottom: 25px;
+}
+
+/* guest book entries */
+.entries {
+    overflow-y: auto;
+    max-height: 55vh;
+}
+.entries li{
+    border-bottom: 1px solid white;
+    list-style: none;
+    margin: 25px 0;
+    padding: 0 20px;
+}
+.author {
+    font-weight: 700;
+    font-style: italic;
+    text-align: right;
+}
+.comment {
+    margin: 10px 0;
+}
+.timestamp {
+    font-style: italic;
+    font-size: 0.8rem;
+    text-align: right;
+    margin-bottom: 5px;
+}
+
+/* new entry form */
+.add_entry_form {
+    height: 30vh;
+    margin-top: 50px;
+}
+form input, form label , textarea, .submit_btn{
+    text-align: center;
+}
+.new_author, .new_comment, .submit_btn {
+    width: 90%;
+    font-size: 1rem;
+}
+.new_author {
+    height: 40px;
+}
+.new_comment {
+    height: 70%;
+    margin-top: 20px;
+}
+.submit_btn {
+    height: 35px;
+    padding: 3px;
+    margin: 10px auto 0;
+    display: block;
+    background: rgb(180,180,180)
+}
+
+.hide {
+    display: none;
+}
+
+/* footer */
+footer, footer a {
+    color:rgb(47, 79, 79);
+    background: rgb(209, 171, 68);
+}
+footer a {
+    text-decoration: none;
+}
+footer a:hover {
+    text-decoration: underline;
+}
+footer span {
+    width: 100px;
+    margin: 10px auto;
+    display: inline-block;
+}
+footer a:hover {
+    color: rgb(10, 32, 32);
+}
+footer img {
+    height: 20px;
+    margin-bottom: -5px;
+}
+
+
+
+/***************************
+    DIFFERENT DEVICE SIZES
+****************************/
+/* Small devices (landscape phones, 576px and up) */
+@media screen and (min-width: 480px) {
+}
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+    html {
+        font-size: 1.2rem;
+    }
+    .body_header {
+        max-height: 120px;
+    }
+    main {
+    .author, .timestamp,.comment{
+        padding: 0 10%;
+     }
+    .submit_btn {
+        width: 300px;
+    }
+}
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 1024px) {
+    .author, .timestamp,.comment{
+        padding: 0 20%;
+    }
+}
+
+/* Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1280px) {
+}
