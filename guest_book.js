@@ -30,16 +30,15 @@ const addComment = (entry, id) => {
     list.innerHTML += html;
 }
 
-// get the collection from the firebase db
-db.collection("gbook_entries").get().then((snapshot) => {   
-    snapshot.docs.forEach(entry => {
-        addComment(entry.data(), entry.id);
-    });
-}).catch(err => {
-    alert(`We couldn't load the comments left by other guests.
-    Please check if you have an internet connection and refresh the page.
-    Thank you!`);
-})
+// get the collection from the firebase db with a real time listener
+db.collection("gbook_entries").onSnapshot(snapshot => {
+    snapshot.docChanges().forEach(change => {
+        const doc = change.doc;
+        if (change.type === 'added'){
+            addComment(doc.data(), doc.id);
+        }
+    });    
+});
 
 // add the collection to the firebase db
 form.addEventListener('submit', e => {
