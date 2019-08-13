@@ -4,12 +4,16 @@ const form = document.querySelector('.add_entry_form');
 const list = document.querySelector('ul');
 
 // show/hide all entries and the new entry form
-navi.addEventListener('click', () => {
+const show_hide = () => {
     let navi = document.querySelectorAll('.navi');
     navi[0].classList.toggle('hide');
     navi[1].classList.toggle('hide');
     article.querySelector('.all_entries').classList.toggle('hide');
     article.querySelector('.new_entry').classList.toggle('hide');
+};
+
+navi.addEventListener('click', () => {
+    show_hide();
 });
 
 // add new entry template
@@ -44,15 +48,26 @@ db.collection("gbook_entries").onSnapshot(snapshot => {
 form.addEventListener('submit', e => {
     e.preventDefault();
     const now = new Date();
+    const author = () => {
+        if (!form.new_author.value) {
+            return ('anonymous');
+        } else {
+            return form.new_author.value;
+        };
+    };
     const gbook_entry = {
-        author: form.new_author.value,
+        author: author(),
         comment: form.new_comment.value,
         created_at: firebase.firestore.Timestamp.fromDate(now),
         }
     
-    db.collection('gbook_entries').add(gbook_entry).then(() => {
-        console.log('A new entry added');
+    db.collection('gbook_entries').add(gbook_entry)
+    .then(() => {
+        alert('Your comment has been added to our Guest Book!\nThank you!');
+        form.new_author.value = '';
+        form.new_comment.value = '';
+        show_hide();
     }).catch(err => {
-        alert(`Sorry, we couldn't save your message. PLease try it again. Thank you!`);
+        alert(`Sorry, we couldn't save your message. Please try it again. Thank you!`);
     })
 });
