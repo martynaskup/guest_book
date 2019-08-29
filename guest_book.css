@@ -13,7 +13,12 @@ html {
 body {
   background: black;
 }
-
+.flex-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100vh;
+}
 /* header */
 .body_header {
   max-height: 110px;
@@ -40,7 +45,6 @@ nav div:hover {
 /* main */
 main {
   color: beige;
-  height: 76vh;
 }
 
 article {
