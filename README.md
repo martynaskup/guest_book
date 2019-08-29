@@ -1,6 +1,6 @@
 # guest_book
-A JavaScript based website to display guest book entries and let guests to leave their comments.
 
+A JavaScript based website to display guest book entries and let guests to leave their comments.
 
 <h1>Features</h1>
 <ul>
