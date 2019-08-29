@@ -6,7 +6,8 @@
   padding: 0;
 }
 html {
-  font-size: 16px;
+  font-family: Overpass, 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 14px;
   text-align: center;
 }
 body {
@@ -46,7 +47,7 @@ article {
   padding: 40px;
 }
 h1 {
-  margin-bottom: 25px;
+  margin-bottom: 15px;
 }
 
 /* guest book entries */
@@ -116,6 +117,8 @@ footer,
 footer a {
   color: #2B4848;
   background: rgb(209, 171, 68);
+  font-size: .9rem;
+  padding-top: 5px;
 }
 footer a {
   text-decoration: none;
@@ -150,6 +153,9 @@ footer img {
   }
   .body_header {
     max-height: 120px;
+  }
+  h1 {
+    margin-bottom: 25px;
   }
   .author,
   .timestamp,
